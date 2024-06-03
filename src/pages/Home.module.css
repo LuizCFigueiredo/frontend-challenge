@@ -1,0 +1,53 @@
+.contentBody{
+    width: calc(100vw - 5vw);
+    margin-left: 19px;
+    margin-top: 54px;
+}
+
+.tittle{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.73px;
+}
+
+.Frase{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16.94px;
+}
+
+.SpanFrase{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: black;
+}
+
+.LineContent{
+    width: 97%;
+    border: 1px solid #44444444;
+    margin-top: 15px;
+}
+
+#filtro{
+    width: 71.5%;
+    padding: 10px 40px 10px 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.InputButton{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.ButtonInput{
+    position: absolute;
+    right: 31.5%;
+    top: 68%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    cursor: pointer;
+}

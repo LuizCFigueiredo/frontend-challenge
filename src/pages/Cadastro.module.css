@@ -1,0 +1,131 @@
+.ContainerMain{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.ContainerPai{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    flex-direction: row;
+}
+
+.Container2{
+    height: 100%;
+    min-width: 45%; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #EEE;
+
+    padding: 24px;
+}
+
+.Container1{
+    height: 100%;
+    min-width: 54%;
+    flex: 2;
+
+    background-color: #EEE;
+    background-image: url(fund.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.textindex{
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.73px;
+    
+    position: absolute;
+    top: 105px;
+    left: 85px;
+
+    color: #ffffff;
+}
+
+.span{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24.2px;
+    margin-top: -5px;
+    display: block;
+}
+
+.smallform{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16.94px;
+}
+
+#small{
+    color: #555555;
+    margin-top: 5px;
+}
+
+.form{
+    margin: -3% 0 2% 0;
+}
+
+.spanform{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+}
+
+.content{
+    content: " ";
+    border: 1px solid #CCCCCCCC;
+    width: 353px;
+    margin-top: 24px;
+    margin-bottom: 11px;
+}
+
+.Inputs{
+    margin-top: 17px;
+}
+
+.buttonCadastrar button{
+    background: #E45201;
+    color: #FFFFFF;
+}
+
+.buttonLogin button{
+    color: #E45201;
+    border: 1px solid #E45201;
+}
+
+.Link{
+    text-decoration: none;
+}
+
+@media (width <= 567px){
+    .Container2{
+        min-width: 100%;
+        height: 100vh;
+        position: absolute;
+    }
+    .form{
+        position: relative;
+        top: 5%;
+    }
+}
+
+@media (width <= 768px){
+    .Container2{
+        min-width: 100%;
+        height: 100vh;
+        position: absolute;
+    }
+    .form{
+        position: relative;
+        top: 5%;
+    }
+}

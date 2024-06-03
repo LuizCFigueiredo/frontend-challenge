@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "luizdev@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "2",
+      "email": "LucasDev@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "3",
+      "email": "luizdev1@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "4",
+      "email": "luizdev12@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "5",
+      "email": "luizdev4@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "6",
+      "email": "luizdev55@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "7",
+      "email": "luidev@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "8",
+      "email": "luizdev777@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "9",
+      "email": "luizdev111@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "10",
+      "email": "luizdev00@gmail.com",
+      "password": "1234567"
+    }
+  ]
+}
