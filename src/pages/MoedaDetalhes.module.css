@@ -1,0 +1,75 @@
+.ContentBdy{
+    width: calc(100vw - 5vw);
+    display: flex;
+    flex-direction: column;
+    margin-left: 19px;
+    margin-top: 54px;
+}
+
+.ContentLine{
+    width: 97%;
+    border: 1px solid #44444444;
+    margin-top: 15px;
+}
+
+.detalhesContainer{
+    margin: 14px 0px 0px 0px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.detalhesContainerText{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalhesContainerText p {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+}
+
+.spanContainer{
+    font-weight: 300;
+}
+
+.NomeMoeda{
+    font-weight: 600;
+}
+
+.divButton{
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 29%;
+    margin-left: 15%;
+}
+
+.BackButton{
+    text-decoration: none;
+}
+
+.ContentBdy Button{
+    width: 200px;
+    background-color: #E45201;
+    color: #fff;
+    border: none;
+}
+
+@media (width <= 768px){
+
+    .ContentBdy{
+        margin-top: 35px;
+    }
+
+    .divButton{
+        max-width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 99%;
+        margin-left: 15%;
+    }
+}

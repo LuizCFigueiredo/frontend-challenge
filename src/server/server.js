@@ -6,9 +6,9 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type']
+  origin: ['http://localhost:5173', 'http://192.168.0.9:5173'],
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
 }));
 
 app.use(bodyParser.json());
@@ -79,6 +79,6 @@ app.post('/cadastro', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+app.listen(3000, '192.168.0.9', () => {
     console.log('Listening on port 3000');
 });

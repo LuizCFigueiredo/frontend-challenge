@@ -92,15 +92,18 @@
 }
 
 .nameLogo{
-    text-align: center;
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 0;
 }
 
 .nameTextSmall{
+    text-align: start ;
     font-weight: 300;
     font-size: 14px;
     line-height: 16.94px;
     color: #222222;
+    margin-bottom: -7px;
 }
 
 .nameText{
@@ -124,6 +127,16 @@
     margin-left: 95px;
 }
 
+.open .contentTabela{
+    display: flex;
+    gap: 10px;
+    margin-top: 7px;
+}
+
+.LinkHome{
+    text-decoration: none;
+}
+
 .open .contentTabela  p{
     display: flex;
     gap: 10px;
@@ -139,6 +152,56 @@
 }
 
 .contentTabela img{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+}
+
+@media (width <= 768px){
+    .open .ContentUp{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 85%;
+    }
+
+    .open .ContentLine{
+        width: 75%;
+        margin-left: 10%;
+
+    }
+
+    .sidebar{
+        background: none;
+        width: 10vw;
+        margin: 15px 0px 0px 15px;
+        height: 5vh;
+        border-radius: 50px;
+    }
+
+    .sidebar .ContentUp{
+        margin-top: -2px;
+        padding-left: 2px;
+    }
+
+    .sidebar .bars{
+        background-color: #E45201;
+    }
+
+    .open{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        z-index: 1;
+        margin: 0;
+        border-radius: 0;
+        background: #E45201;
+    }
+    .open .bars{
+        background-color: #FFFFFF;
+    }
+    
+    .TabelaOp{
+        position: relative;
+        left: 30%;
+        top: 1%;
+    }
 }

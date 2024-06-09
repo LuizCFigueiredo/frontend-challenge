@@ -3,7 +3,7 @@ import Face from "../assets/face.png";
 import Google from '../assets/google.png';
 import styles from './Login.module.css';
 import Input from '../components/forms/Input';
-import React, { useState } from "react";
+import { React, useState, useEffect } from "react";
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from "react-router-dom";
@@ -17,18 +17,37 @@ function Login() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     
+    useEffect(() => {
+        toast.dismiss();
+
+        return () => {
+            toast.dismiss();
+        };
+    }, []);
+
     const handleSubmit = async (e) =>{
         e.preventDefault();
+        
+
+        const buttonId = e.nativeEvent.submitter.id;
+        
+        if (buttonId !== 'login') {
+            return;
+        }
+        
+        toast.remove();
 
         if (email.trim() === "" || password.trim() === "") {
         toast.error("Por favor, preencha o campo obrigatório.");
         return;
         }
+        
+        
 
         try {
             setLoading(true);
             const response = await axios.post(
-                "http://localhost:3000/login",
+                "http://192.168.0.9:3000/login",
                 { email, password },
                 {   
                 headers: { "Content-Type": "application/json" },
@@ -58,7 +77,17 @@ function Login() {
 }
     return (
         <main className={styles.containerMain}>
-            <Toaster position="top-center" reverseOrder={false}/>
+            <Toaster position="top-center" reverseOrder={false}
+                toastOptions={{
+                    // Define default options
+                    className: '',
+                    duration: 1200,
+                    style: {
+                        background: '#363636',
+                        color: '#fff',
+                    },
+                }}
+            />
             <div className={styles.containerPai}>
                 <div className={styles.containerLogin1}>
                     <p className={styles.textIndex}>
@@ -106,14 +135,14 @@ function Login() {
                         <Link to='/forgetPassword' className={styles.LinkCadastro}>
                             <small className={styles.contentText}>esqueceu sua senha?</small>
                         </Link>
-                        <div className={styles.buttonCadastrar}>
+                        <div className={styles.buttonCadastrar} id="login">
                             <Button
                                 id="login"
                                 p={loading ? "Carregando..." : "Login"}
-                                onClick={handleSubmit}
+                                type="submit"
                             />
                         </div>
-                        <div className={styles.buttonLogin}>
+                        <div className={styles.buttonLogin} id="cadastrar">
                             <Link to='/cadastro' className={styles.LinkCadastro}>
                                 <Button
                                     id="cadastrar"

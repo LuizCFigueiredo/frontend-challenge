@@ -51,3 +51,25 @@
     background: none;
     cursor: pointer;
 }
+
+.ContainerCards{
+    width: 21%;
+    margin: 14px 0px 0px 0px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+@media (width <= 768px){
+    .contentBody{
+        width: calc(95vw - 5vw);
+        height: 95vh;
+        margin-top: 35px;
+        margin-left: 15px;
+    }
+    .ContainerCards{
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 50px;
+    }
+}

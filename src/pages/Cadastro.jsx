@@ -4,7 +4,7 @@ import Google from '../assets/google.png';
 import styles from './Cadastro.module.css';
 import Input from '../components/forms/Input';
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios'
 import toast, { Toaster } from "react-hot-toast";
 
@@ -13,14 +13,35 @@ function Cadastro() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
-  
+
+    useEffect(() => {
+      // Limpar toasts ao montar o componente
+      toast.dismiss();
+
+      return () => {
+          // Limpar toasts ao desmontar o componente
+          toast.dismiss();
+      };
+    }, []);
+
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
+      
+
+      const buttonId = e.nativeEvent.submitter.id;
+
+      if (buttonId !== 'cadastrar') {
+        return;
+      }
+      
+      toast.remove();
+
       if (email.trim() === "" || password.trim() === "" || confirmPassword.trim() === "") {
         toast.error("Por favor, preencha o campo obrigatório.");
         return;
       }
+      
+      
 
       if (password !== confirmPassword){
         toast.error("As senhas precisam ser iguais")
@@ -29,7 +50,7 @@ function Cadastro() {
   
       try {
         const response = await axios.post(
-          "http://localhost:3000/cadastro",
+          "http://192.168.0.9:3000/cadastro",
           { email, password },
           {
             headers: { "Content-Type": "application/json" },
@@ -60,7 +81,17 @@ function Cadastro() {
 
   return (
     <main className={styles.ContainerMain}>
-      <Toaster position="top-center" reverseOrder={false}/>
+      <Toaster position="top-center" reverseOrder={false}
+        toastOptions={{
+          // Define default options
+          className: '',
+          duration: 1200,
+          style: {
+            background: '#363636',
+            color: '#fff',
+          },
+        }}
+      />
         <div className={styles.ContainerPai}>
             <div className={styles.Container1}>
                 <p className={styles.textindex}>
@@ -114,13 +145,14 @@ function Cadastro() {
                             set={setConfirmPassword}
                         />
                     </div>
-                    <div className={styles.buttonCadastrar}>
+                    <div className={styles.buttonCadastrar} id="cadastrar">
                         <Button
                             id="cadastrar"
                             p="Me cadastrar"
+                            type="submit"
                         />
                     </div>
-                    <div className={styles.buttonLogin}>
+                    <div className={styles.buttonLogin} id="login">
                         <Link to='/login' className={styles.Link}>
                             <Button
                                 id="login"

@@ -1,6 +1,6 @@
 import styles from './Input.module.css'
 
-const Input = ({ label, type, id, placeholder, value, autoComplete, set }) => {
+const Input = ({ label, type, id, placeholder, value, autoComplete, set}) => {
   return (
     <div className={styles.Input}>
       <label htmlFor={id}>{label}</label>

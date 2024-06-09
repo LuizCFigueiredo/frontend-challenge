@@ -8,3 +8,10 @@
 #root{
   display: flex;
 }
+
+@media (width <= 768px){
+  #root{
+    display: flex;
+    flex-direction: column;
+  }
+}

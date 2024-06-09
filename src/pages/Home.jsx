@@ -2,9 +2,40 @@ import styles from './Home.module.css';
 import Input from '../components/forms/Input';
 import Lupa from '../assets/lupa.svg';
 import Card from '../components/cards/Card';
-import Bit from '../assets/Bitcoin.png';
+import { useState, useEffect } from 'react';
 
 function Home() {
+
+    const [filtroInput, setFiltroInput] = useState("");
+    const [moedas, setMoedas] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetch('http://192.168.0.9:3001/moedas')
+            .then(response => response.json())
+            .then(data => {
+                setMoedas(data);
+                setLoading(false);
+            })
+            .catch(error => {
+                setError('Erro ao buscar dados');
+                setLoading(false);
+            });
+    }, []);
+
+    const moedasFiltradas = moedas.filter(moeda =>
+        moeda.nome.toLowerCase().includes(filtroInput.toLowerCase())
+    );
+
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
     return(
         <div className={styles.contentBody}>
             <h1 className={styles.tittle}>Lista de Moedas</h1>
@@ -20,17 +51,20 @@ function Home() {
                     type="text"
                     id={styles.filtro}
                     autoComplete="off"
+                    set={setFiltroInput}
                 />
                 <button className={styles.ButtonInput}><img src={Lupa} alt="filter"/></button>
             </div>
             <div className={styles.ContainerCards}>
-                {/*<Card 
-                    id="bitcoin"
-                    img={Bit}
-                    MoedaNome="Bitcoin"
-                    MoedaValor="R$ 305.140,00"
-                />*/}
-                
+                {moedasFiltradas.map((moeda) => (
+                    <Card
+                        key={moeda.id}
+                        id={moeda.id}
+                        img={moeda.img}
+                        MoedaNome={moeda.nome}
+                        MoedaValor={moeda.valor}
+                    />
+                ))}
             </div>
         </div>
     )

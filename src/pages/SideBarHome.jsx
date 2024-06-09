@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from '../pages/SideBarHome.module.css'
 import cota from '../assets/cota.png';
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -25,9 +26,22 @@ const Sidebar = () => {
             <div className={styles.ContentLine}>
 
             </div>
-            <div className={styles.contentTabela}>
-                <p><img src={cota}></img>Cotação das Moedas</p>
+            <div className={styles.TabelaOp}>
+                <div className={styles.contentTabela}>
+                {isOpen ? (
+                    <>
+                        <img src={cota} alt="Cotação das Moedas" />
+                        <Link to='/home' className={styles.LinkHome}><p>Cotação das Moedas</p></Link>
+                    </>
+                ) : (
+                    <p>
+                        <img src={cota} alt="Cotação das Moedas" />
+                        Cotação das Moedas
+                    </p>
+                )}
+                </div>
             </div>
+            
         </div>
     );
 };

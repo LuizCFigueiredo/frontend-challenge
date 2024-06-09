@@ -49,6 +49,59 @@
       "id": "10",
       "email": "luizdev00@gmail.com",
       "password": "1234567"
+    },
+    {
+      "id": "11",
+      "email": "luizcarlosfc190@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "12",
+      "email": "luizdev@gmail.clm",
+      "password": "123"
+    },
+    {
+      "id": "13",
+      "email": "luizdev7@gmail.com",
+      "password": "123"
+    }
+  ],
+  "moedas": [
+    {
+      "id": "Bitcoin",
+      "img": "/src/assets/Bitcoin.png",
+      "nome": "Bitcoin",
+      "valor": "372.378,40"
+    },
+    {
+      "id": "Ethereum",
+      "img": "/src/assets/etherium.png",
+      "nome": "Ethereum",
+      "valor": "20.130,75"
+    },
+    {
+      "id": "Tether",
+      "img": "/src/assets/tether.png",
+      "nome": "Tether (USDt)",
+      "valor": "5,29"
+    },
+    {
+      "id": "BNB",
+      "img": "/src/assets/bnb.png",
+      "nome": "BNB",
+      "valor": "3.728,00"
+    },
+    {
+      "id": "Solana",
+      "img": "/src/assets/solana.png",
+      "nome": "Solana",
+      "valor": "170,468"
+    },
+    {
+      "id": "USDC",
+      "img": "/src/assets/USDC.png",
+      "nome": "USDC",
+      "valor": "1,00"
     }
   ]
 }
